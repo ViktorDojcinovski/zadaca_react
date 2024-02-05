@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Content } from "./components/Content.component";
 import "./App.css";
 
 // JSX
@@ -16,18 +18,6 @@ import "./App.css";
  *  document.getElementById().text(sentence);
  * </script>
  */
-function Content() {
-  const tag = "paragraph";
-  const sentence = `Some basic ${tag} tag.`;
-  return (
-    <>
-      <div>
-        <a href="https://google.com">Google</a>
-        <p onClick>{sentence}</p>
-      </div>
-    </>
-  );
-}
 
 function App() {
   return (
