@@ -1,9 +1,9 @@
 // ParentComponent.js
-import React, { useState } from 'react';
-import ChildComponent from './ChildComponent';
+import React, { useState } from "react";
+import ChildComponent from "./ChildComponent";
 
 const ParentComponent = () => {
-  const [messageFromChild, setMessageFromChild] = useState('');
+  const [messageFromChild, setMessageFromChild] = useState("");
 
   const handleCallback = (message) => {
     setMessageFromChild(message);
@@ -18,14 +18,14 @@ const ParentComponent = () => {
   );
 };
 
-export default ParentComponent;
+// export default ParentComponent;
 
 // ChildComponent.js
-import React from 'react';
+import React from "react";
 
 const ChildComponent = ({ callback }) => {
   const sendMessageToParent = () => {
-    callback('Hello from Child!');
+    callback("Hello from Child!");
   };
 
   return (
@@ -36,4 +36,4 @@ const ChildComponent = ({ callback }) => {
   );
 };
 
-export default ChildComponent;
+// export default ChildComponent;
