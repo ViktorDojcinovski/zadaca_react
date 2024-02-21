@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
 
+import { Pokemon } from "./Pokemon.component";
+
 // { title: "Title", prop2: 2 ....}
 // const { title, prop2 } = props;
 
 // const programmingLanguages = ["JavaScript", "Java", "C#"]
 // const [js, java, cSharp] = programmingLanguages;
 
-const Content = (props) => {
-  const { title, prop2, onClick } = props;
+const Content = ({ title, prop2, onClick }) => {
+  // const { title, prop2, onClick } = props;
   const tag = "paragraph";
   const sentence = `Some basic ${tag} tag.`;
 
   let [counter] = useState(5);
-  let [pokemon, setPokemon] = useState(null);
+  let [pokemons, setPokemons] = useState([]);
 
   const fetchPokemons = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
 
-    setPokemon(data.results[0].name);
+    setPokemons(data.results);
   };
 
   useEffect(() => {
@@ -41,6 +43,8 @@ const Content = (props) => {
 
     // fetchPokemons(url)
     // setPokemon(data.results[0].name);
+
+    fetchPokemons(url);
   }, []);
 
   // const onClickHandler = () => {
@@ -48,6 +52,18 @@ const Content = (props) => {
   //   counter = counter + 1;
   //   setCounter(counter);
   // };
+  // function (i) { return i + 1};
+  // [2, 3, 4] -- > arr.map((i) => { return i + 1 }) arr --> [1, 2, 3]
+
+  /**
+   * if(condition) {
+   *
+   * } else {
+   *
+   * }
+   *
+   * { condition ? {} : {} }
+   */
 
   return (
     <>
@@ -58,8 +74,14 @@ const Content = (props) => {
         <p>{sentence}</p>
         <p>Counter: {counter}</p>
         <button onClick={() => onClick(counter)}>Send</button>
-        <input />
-        <p>{pokemon}</p>
+        <input onChange={() => {}} />
+        <p>
+          {!pokemons.length
+            ? "loading..."
+            : pokemons.map((pokemon) => {
+                return <Pokemon pokemon={pokemon} />;
+              })}
+        </p>
       </div>
     </>
   );

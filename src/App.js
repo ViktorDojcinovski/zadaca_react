@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Content } from "./components/Content.component";
+import Calculator from "./components/Calculator.component";
 import "./App.css";
 
 // JSX
@@ -45,13 +46,14 @@ function App() {
 
   return (
     <>
-      <div className="first">Hello World!</div>
+      {/* <div className="first">Hello World!</div>
       <div className="second">Something!</div>
       <Content
         title="Component Title"
         prop2={5}
         onClick={onClickHandler}
-      ></Content>
+      ></Content> */}
+      <Calculator />
     </>
   );
 }

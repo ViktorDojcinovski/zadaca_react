@@ -11,6 +11,10 @@ Build a temperature converter using React, where users can input a temperature i
 1. **TemperatureInput**: A component that takes a temperature input and notifies the parent when the value changes. (hint: think whether you need two different compoents, one for Celsius and one for Fahrenheit input.)
 2. **Calculator**: The parent component that manages the state and renders two `TemperatureInput` components, one for Celsius and one for Fahrenheit.
 
+# const toCelsius = (fahrenheit) => ((fahrenheit - 32) \* 5) / 9;
+
+# const toFahrenheit = (celsius) => (celsius \* 9) / 5 + 32;
+
 ## Instructions
 
 1. **TemperatureInput Component**
